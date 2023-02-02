@@ -1,0 +1,20 @@
+.header {
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    width:100%;
+    left:0;
+    top:0;
+    overflow-y: hidden;
+}
+#parts-picker-container{
+    position: relative;
+    margin-top: 5% !important;
+    margin: auto;
+    height:89vh;
+    width:90%;
+    overflow-y: hidden;
+    border: 1px solid black;
+    border-radius: 5px;
+}
