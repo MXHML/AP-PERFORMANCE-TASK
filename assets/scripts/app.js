@@ -1,4 +1,4 @@
-const CPU = [
+const CPU_LIST = [
         {name:'AMD Ryzen 7 5800X',cores:8,base_clock:'3.8GHz',tdp:105,integrated_graphics:false,price:235.97},
         {name:'AMD Ryzen 5 5600X',cores:6,base_clock:'3.7GHz',tdp:65,integrated_graphics:false,price:167.00},
         {name:'Intel Core i9-13900K',cores:24,base_clock:'3GHz',tdp:125,integrated_graphics:true,price:594.99},
@@ -25,7 +25,7 @@ const CPU = [
         {name:'AMD Ryzen 5 5600X',cores:6,base_clock:'3.7GHz',tdp:65,integrated_graphics:false,price:169.99},
         {name:'AMD Ryzen Threadripper 3990X',cores:64,base_clock:'2.9GHz',tdp:280,integrated_graphics:false,price:3999.99},
     ]
-const GPU=[
+const GPU_LIST =[
             {name:'NVIDIA GeForce RTX 4080',memory:'32GB',memory_type:'GDDR6X',memory_clock:'19.5GHz',memory_bandwidth:'1248GB/s',tdp:350,price:1499.99},
             {name:'NVIDIA GeForce RTX 4070',memory:'16GB',memory_type:'GDDR6X',memory_clock:'19GHz',memory_bandwidth:'912GB/s',tdp:320,price:699.99},
             {name:'NVIDIA GeForce RTX 4060',memory:'8GB',memory_type:'GDDR6',memory_clock:'14GHz',memory_bandwidth:'448GB/s',tdp:220,price:499.99},
@@ -52,7 +52,7 @@ const GPU=[
             {name:'Asus ROG STRIX GAMING OC',memory:'8GB',memory_type:'GDDR6',memory_clock:'14GHz',memory_bandwidth:'448GB/s',tdp:215,price:499.99},
             {name:'MSI GAMING Z TRIO',memory:'8GB',memory_type:'GDDR6',memory_clock:'14GHz',memory_bandwidth:'448GB/s',tdp:215,price:499.99},
         ]
- const MOBO=[
+ const MOBO_LIST =[
             {name:'ASUS TUF GAMING X570-PLUS (Wi-Fi)', socket:'AM4',form_factor:'ATX',max_memory:128,memory_slots:4},
             {name:'ASUS ROG STRIX X570-E GAMING', socket:'AM4',form_factor:'ATX',max_memory:128,memory_slots:4},
 
@@ -83,7 +83,7 @@ const GPU=[
             {name:'MSI MPG Z490 GAMING CARBON WIFI', socket:'LGA1700',form_factor:'ATX',max_memory:128,memory_slots:4},
             {name:'MSI MPG Z490 GAMING EDGE WIFI', socket:'LGA1700',form_factor:'ATX',max_memory:128,memory_slots:4},
         ]
-  const MEM=[
+  const MEM_LIST =[
             {name:'Corsair Vengeance LPX 16GB (2x8GB) DDR4 3600MHz',speed:3600,price:99.99},
             {name:'Corsair Venegence RGB Pro 32GB (2x16GB) DDR4 3600MHz',speed:3600,price:199.99},
             {name:'G.Skill Trident Z Neo 16GB (2x8GB) DDR4 3600MHz',speed:3600,price:99.99},
@@ -110,7 +110,7 @@ const GPU=[
             {name:'G.SKill Trident Z RGB 32GB (2x16GB) DDR4 3600MHz',speed:3600,price:199.99},
             {name:'G.Skill Trident Z RGB 16GB (2x8GB) DDR4 3600MHz',speed:3600,price:99.99},
         ]
-  const STRGE=[
+  const STRGE_LIST =[
             {name:'Samsung 970 EVO Plus 1TB M.2 NVMe',price:199.99,type:'SSD'},
             {name:'Samsung 970 EVO Plus 2TB M.2 NVMe',price:199.99,type:'SSD'},
             {name:'Samsung 970 EVO Plus 4TB M.2 NVMe',price:199.99,type:'SSD'},
@@ -140,7 +140,7 @@ const GPU=[
             {name:'Western Digital Red Pro 10TB 3.5" SATA',price:199.99,type:'HDD'},
 
         ]
-  const PWRSPLY=[
+  const PWRSPLY_LIST =[
             {name:'Corsair RM850x',efficiency:80,type:'ATX',modular:true,wattage:850,price:99.99},
             {name:'Corsair RM750x',efficiency:80,type:'ATX',modular:true,wattage:750,price:99.99},
             {name:'Corsair RM650x',efficiency:80,type:'ATX',modular:true,wattage:650,price:99.99},
@@ -154,8 +154,19 @@ const GPU=[
             {name:'Corsair SF600',efficiency:80,type:'SFX',modular:true,wattage:600,price:99.99},
             {name:'Cooler Master V850 SFX Gold',efficiency:80,type:'SFX',modular:true,wattage:850,price:99.99},
         ]
-const MNTR=[
-        
+const MNT_LIST =[
+        { name: "Acer Predator X27", size: 27, resolution: "4K UHD", refreshRate: 144 },
+        { name: "ASUS ROG Swift PG279QZ", size: 27, resolution: "WQHD", refreshRate: 165 },
+        { name: "LG UltraGear 27GN950-B", size: 27, resolution: "4K UHD", refreshRate: 144 },
+        { name: "Dell Alienware AW3420DW", size: 34, resolution: "WQHD", refreshRate: 120 },
+        { name: "AOC CQ32G1", size: 32, resolution: "WQHD", refreshRate: 144 },
+        { name: "Acer Predator X34P", size: 34, resolution: "WQHD", refreshRate: 100 },
+        { name: "Alienware 34", size: 34, resolution: "3440 x 1440", refreshRate: 120 },
+        { name: "ASUS ROG Swift PG279QZ", size: 27, resolution: "2560 x 1440", refreshRate: 165 },
+        { name: "Dell Alienware 55", size: 55, resolution: "3840 x 2160", refreshRate: 144 },
+        { name: "MSI Optix MAG321CQR", size: 31.5, resolution: "2560 x 1440", refreshRate: 144 },
+        { name: "LG 27GL83A-B", size: 27, resolution: "2560 x 1440", refreshRate: 144 },
+        { name: "Acer Predator XB273K", size: 27, resolution: "2560 x 1440", refreshRate: 144 },
         ]
 
 const listIndex = [{
@@ -165,5 +176,5 @@ const listIndex = [{
     "MEM":4,
     "STRGE":5,
     "PWRSPLY":6,
-    "MNTR":7
+    "MNT":7
 }]

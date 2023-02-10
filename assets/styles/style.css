@@ -9,6 +9,8 @@
     overflow-y: hidden;
 }
 #parts-picker-container{
+    display:flex;
+    justify-content: center;
     position: relative;
     margin-top: 5% !important;
     margin: auto;
@@ -17,6 +19,9 @@
     overflow-y: hidden;
     border: 1px solid black;
     border-radius: 5px;
+}
+#parts-picker-container a{
+   max-height: 80px;
 }
 body{
     background-image: linear-gradient(to right,#C0C2C9, white, #C0C2C9);
@@ -57,4 +62,27 @@ button:hover{
     width: 100%;
     height: 100%;
     overflow-y: scroll;
+}
+.ulContainer ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.ulContainer ul li{
+    float: left;
+    width: 99%;
+    height: 100%;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.ulContainer ul li:hover{
+    background-color: #000;
+    color: #fff;
 }
