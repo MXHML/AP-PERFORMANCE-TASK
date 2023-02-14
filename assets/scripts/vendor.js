@@ -27,37 +27,37 @@ async function populateList(listname){
         console.log('%cpopulateList: ul element found! Populating...','background-color:green; color:lightgreen;')
         if(listname==CPU_LIST){
             for(let x=0;x<listname.length;x++){
-                ulDetector[0].innerHTML+=`<li><div class="row"><div class="col">${CPU_LIST[x].name}</div> <div class="col">Base clock: ${CPU_LIST[x].base_clock}</div><div class="col">Cores: ${CPU_LIST[x].cores}</div><div class="col">Price: ${CPU_LIST[x].price}</div></li>`
+                ulDetector[0].innerHTML+=`<li><div class="row"><div class="col" id="name">${CPU_LIST[x].name}</div> <div class="col">Base clock: ${CPU_LIST[x].base_clock}</div><div class="col">Cores: ${CPU_LIST[x].cores}</div><div class="col">Price: ${CPU_LIST[x].price}</div></li>`
             }
         }
         if(listname==GPU_LIST){
             for(let x=0;x<listname.length;x++){
-                ulDetector[0].innerHTML+=`<li><div class='row'><div class='col'>${GPU_LIST[x].name}</div> <div class='col'>Memory Clock: ${GPU_LIST[x].memory_clock}</div></li>`
+                ulDetector[0].innerHTML+=`<li><div class='row'><div class='col' id="${GPU_LIST[x].name}">${GPU_LIST[x].name}</div> <div class='col'>Memory Clock: ${GPU_LIST[x].memory_clock}</div></li>`
             }
         }
         if(listname==MOBO_LIST){
             for(let x=0;x<listname.length;x++){
-                ulDetector[0].innerHTML+=`<li>${MOBO_LIST[x].name} Socket: ${MOBO_LIST[x].socket}</li>`
+                ulDetector[0].innerHTML+=`<li><div class='row'><div class='col' id="${MOBO_LIST[x].name}">${MOBO_LIST[x].name}</div> <div class="col"> Socket: ${MOBO_LIST[x].socket}</div></li>`
             }
         }
         if(listname==MEM_LIST){
             for(let x=0;x<listname.length;x++){
-                ulDetector[0].innerHTML+=`<li>${MEM_LIST[x].name} Memory Speed: ${MEM_LIST[x].speed}</li>`
+                ulDetector[0].innerHTML+=`<li><div class='row'><div class='col' id="${MEM_LIST[x].name}">${MEM_LIST[x].name}</div> <div class="col"> Memory Speed: ${MEM_LIST[x].speed}</div></li>`
             }
         }
         if(listname==STRGE_LIST){
             for(let x=0;x<listname.length;x++){
-                ulDetector[0].innerHTML+=`<li>${STRGE_LIST[x].name} Capacity: ${STRGE_LIST[x].capacity}</li>`
+                ulDetector[0].innerHTML+=`<li><div class='row'><div class='col' id="${STRGE_LIST[x].name}">${STRGE_LIST[x].name}</div> <div class="col"> Capacity: ${STRGE_LIST[x].capacity}</div></li>`
             }
         }
         if(listname==PWRSPLY_LIST){
             for(let x=0;x<listname.length;x++){
-                ulDetector[0].innerHTML+=`<li>${PWRSPLY_LIST[x].name} Wattage: ${PWRSPLY_LIST[x].wattage}</li>`
+                ulDetector[0].innerHTML+=`<li><div class='row'><div class='col' id="${PWRSPLY_LIST[x].name}">${PWRSPLY_LIST[x].name}</div> <div class="col"> Wattage: ${PWRSPLY_LIST[x].wattage}</div></li>`
             }
         }
         if(listname==MNT_LIST){
             for(let x=0;x<listname.length;x++){
-                ulDetector[0].innerHTML+=`<li>${MNT_LIST[x].name} Resolution: ${MNT_LIST[x].resolution}</li>`
+                ulDetector[0].innerHTML+=`<li><div class='row'><div class='col' id="${MNT_LIST[x].name}">${MNT_LIST[x].name}</div> <div class="col"> Resolution: ${MNT_LIST[x].resolution}</div></li>`
             }
         }
     }else{
@@ -66,11 +66,13 @@ async function populateList(listname){
     let temp = document.querySelectorAll("li")
     temp.forEach((item)=>{
         item.addEventListener('click',()=>{
-            
+            let windowLocation = window.location.pathname
+            windowLocation=windowLocation.replace('/pages/','');windowLocation=windowLocation.replace('.html','');
+            addToStorage(windowLocation,item.children[0].childNodes[0].id);
         })
     })
 }
 
 async function addToStorage(part,name){
-    window.localStorage[part]=name
+    window.localStorage[part]=name;
 }
