@@ -34,4 +34,74 @@
 <script src="/assets/scripts/app.js"></script>
 <script src="/assets/scripts/vendor.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script>
+    let cpuIndex, gpuIndex, moboIndex, memoryIndex, storageIndex, mntrIndex, pwrsplyIndex, totalPrice = 0;
+    $(document).ready(()=>{
+        const createLiElement = document.createElement("li");
+        if(window.localStorage["cpu"]!=="undefined"){
+            console.log("CPU Found! Adding...")
+            for(let x=0;x<CPU_LIST.length;x++){
+                if(CPU_LIST[x].name==window.localStorage["cpu"]){
+                    totalPrice=totalPrice+CPU_LIST[x].price
+                    document.getElementById("build-list").innerHTML+=`<li id="cpu">${window.localStorage["cpu"]}</li>`
+                }
+            }
+        }
+        if(window.localStorage["gpu"]!=="undefined"){
+            console.log("GPU Found! Adding...")
+            for(let x=0;x<GPU_LIST.length;x++){
+                if(GPU_LIST[x].name==window.localStorage["gpu"]){
+                    totalPrice=totalPrice+GPU_LIST[x].price
+                    document.getElementById("build-list").innerHTML+=`<li id="gpu">${window.localStorage["gpu"]}</li>`
+                }
+            }
+        }
+        if(window.localStorage["mobo"]!=="undefined"){
+            console.log("MOBO Found! Adding...")
+            for(let x=0;x<MOBO_LIST.length;x++){
+                if(MOBO_LIST[x].name==window.localStorage["mobo"]){
+                    totalPrice=totalPrice+MOBO_LIST[x].price
+                    document.getElementById("build-list").innerHTML+=`<li>${window.localStorage["mobo"]}</li>`
+                }
+            }
+        }
+        if(window.localStorage["mem"]!=="undefined"){
+            console.log("MEM Found! Adding...")
+            for(let x=0;x<MEM_LIST.length;x++){
+                if(MEM_LIST[x].name==window.localStorage["mem"]){
+                    totalPrice=totalPrice+MEM_LIST[x].price
+                    document.getElementById("build-list").innerHTML+=`<li>${window.localStorage["mem"]}</li>`
+                }
+            }
+        }
+        if(window.localStorage["pwrsply"]!=="undefined"){
+            console.log("POWRSPLY Found! Adding...")
+            for(let x=0;x<PWRSPLY_LIST.length;x++){
+                if(PWRSPLY_LIST[x].name==window.localStorage["pwrsply"]){
+                    totalPrice=totalPrice+PWRSPLY_LIST[x].price
+                    document.getElementById("build-list").innerHTML+=`<li>${window.localStorage["pwrsply"]}</li>`
+                }
+            }
+        }
+        if(window.localStorage["strge"]!=="undefined"){
+            console.log("STRGE Found! Adding...")
+            for(let x=0;x<STRGE_LIST.length;x++){
+                if(STRGE_LIST[x].name==window.localStorage["strge"]){
+                    totalPrice=totalPrice+STRGE_LIST[x].price
+                    document.getElementById("build-list").innerHTML+=`<li>${window.localStorage["strge"]}</li>`
+                }
+            }
+        }
+        if(window.localStorage["mntr"]!=="undefined"){
+            console.log("MNTR Found! Adding...")
+            for(let x=0;x<MNT_LIST.length;x++){
+                if(MNT_LIST[x].name==window.localStorage["mntr"]){
+                    totalPrice=totalPrice+MNT_LIST[x].price
+                    document.getElementById("build-list").innerHTML+=`<li>${window.localStorage["mntr"]}</li>`
+                }
+            }
+        }
+        document.getElementById("build-list").innerHTML+=`<div id="total-price">Total: $${Math.floor(totalPrice)}`
+    })
+</script>
 </html>

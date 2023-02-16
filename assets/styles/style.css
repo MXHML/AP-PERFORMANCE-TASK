@@ -9,7 +9,6 @@
     overflow-y: hidden;
 }
 #parts-picker-container{
-    display:flex;
     justify-content: center;
     position: relative;
     margin-top: 5% !important;
@@ -19,10 +18,20 @@
     overflow-y: hidden;
     border: 1px solid black;
     border-radius: 5px;
+    text-align: center;
 }
 #parts-picker-container a{
    max-height: 80px;
 }
+
+#parts-picker-container li{
+    display: flex; /* use flexbox for layout */
+    justify-content: center; /* space items evenly */
+    align-items: center; /* center items vertically */
+    padding: 10px; /* add padding */
+    border-bottom: 1px solid #ccc; /* add a border between items */
+    font-weight: bolder;}
+
 body{
     background-image: linear-gradient(to right,#C0C2C9, white, #C0C2C9);
 }
