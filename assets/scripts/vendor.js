@@ -53,8 +53,8 @@ async function populateList(listname){
         if(listname==MEM_LIST){
             for(let x=0;x<listname.length;x++){
                 ulDetector[0].innerHTML+=`<li><div class='row'><div class='col' id="${MEM_LIST[x].name}">${MEM_LIST[x].name}</div> 
-                <div class="col"> Memory Speed: ${MEM_LIST[x].speed}</div>
                 <div class='col'> Price: $${MEM_LIST[x].price}</div>
+                <div class='col'> Capacity: ${MEM_LIST[x].capacity}</div>
                 </li>`
             }
         }
